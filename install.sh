@@ -84,8 +84,7 @@ EOF
 
     sudo tee /etc/systemd/system/bluealsa-aplay.service.d/override.conf > /dev/null <<'EOF'
 [Service]
-ExecStart=
-ExecStart=/usr/bin/bluealsa-aplay --pcm=plughw:1,0 00:00:00:00:00:00
+ExecStart=/usr/bin/bluealsa-aplay --pcm=plughw:CARD=sndrpihifiberry,DEV=0 00:00:00:00:00:00
 EOF
 
     sudo systemctl daemon-reload
